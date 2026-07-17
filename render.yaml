@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: keshavwithvelo-license
+    env: node
+    plan: free
+    rootDir: backend-example
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEMO_LICENSE_EMAIL
+        sync: false
+      - key: DEMO_LICENSE_KEY
+        sync: false
